@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style the tab buttons */
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 20%;
+            font-family: "Monaco";
+        }
+
+        /* Change background color of buttons on hover */
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Set default styles for tab content */
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+            font-family: "Monaco";
+        }
+
+        main {
+            width: 100%;
+            height: 500px;
+            background-color: white;
+        }
+
+        footer {
+            width: 100%;
+            height: 100px;
+        }
+
+        footer .tabcontent {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style each tab content individually */
+        #Home {
+            background-color: black;
+        }
+
+        #Athletics {
+            background-color: red;
+        }
+
+        #Videogames {
+            background-color: green;
+        }
+
+        #Crafts {
+            background-color: blue;
+        }
+
+        #Code {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <script>function openTab(tabName, elmnt, color) {
+            var bColor = color;
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            /*tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }*/
+            let $tabcontents = document.getElementsByClassName("tabcontent");
+
+            [...$tabcontents].forEach(function ($item) {
+                $item.style.display = "none";
+            });
+
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            // Show the specific tab content
+            document.getElementById(tabName).style.display = "block";
+
+            document.getElementById("footer").style.display = "block";
+
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+            document.getElementById("footer").style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        let groceryList = ["apples", "milk", "cheese", "meat"];
+
+        for (let i = 0; i < groceryList.length; i++) {
+            console.log(groceryList[i]);
+        }
+
+        groceryList.forEach(function (item) {
+            console.log(item);
+        });
+    </script>
+    <div id="Home" class="tabcontent">
+        <h1>Home</h1>
+        <p>This is the home screen</p>
+        <button class="tablink" onclick="openTab('Home', this, 'black')" id="defaultOpen">Home</button>
+        <main></main>
+        <footer id="footer"></footer>
+    </div>
+    <div id="Athletics" class="tabcontent">
+        <h1>Athletics</h1>
+        <p>Rugby, Basketball, Soccer, and Weightlifting</p>
+        <button class="tablink" onclick="openTab('Athletics', this, 'red')" id="defaultOpen">Athletics</button>
+        <main></main>
+        <footer id="footer"></footer>
+    </div>
+    <div id="Videogames" class="tabcontent">
+        <h1>Videogames</h1>
+        <p>Videogames ranging from Fortnite to Minecraft with all kinds of smaller games in between</p>
+        <button class="tablink" onclick="openTab('Videogames', this, 'green')">Videogames</button>
+        <main></main>
+        <footer id="footer"></footer>
+    </div>
+    <div id="Crafts" class="tabcontent">
+        <h1>Crafts</h1>
+        <p>Material crafts including woodworking and masonry</p>
+        <button class="tablink" onclick="openTab('Crafts', this, 'blue')">Crafts</button>
+        <main></main>
+        <footer id="footer"></footer>
+    </div>
+    <div id="Code" class="tabcontent">
+        <h1>Code<h1>
+                <p>Code projects spanning various languages and interfaces</p>
+                <button class="tablink" onclick="openTab('Code', this, 'orange')">Code</button>
+                <main></main>
+                <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
