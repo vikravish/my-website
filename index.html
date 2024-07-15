@@ -7,69 +7,85 @@
     <title>Document</title>
     <style>
         /* Style the tab buttons */
-        .tablink {
-            background-color: #555;
-            color: white;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            font-size: 17px;
-            width: 20%;
-            font-family: "Monaco";
-        }
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+  font-family: "Monaco";
+}
 
-        /* Change background color of buttons on hover */
-        .tablink:hover {
-            background-color: #777;
-        }
+/* Change background color of buttons on hover */
+.tablink:hover {
+  background-color: #777;
+}
+.body {
+  color: black;
+}
+/* Set default styles for tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+  font-family: "Monaco";
+}
+main {
+  width: 100%;
+  height: 500px;
+  background-color: white;
+}
+footer {
+  width: 100%;
+  height: 100px;
+}
+footer .tabcontent {
+  width: 100%;
+  height: 100%;
+}
 
-        /* Set default styles for tab content */
-        .tabcontent {
-            color: white;
-            display: none;
-            padding: 50px;
-            text-align: center;
-            font-family: "Monaco";
-        }
+p {
+  width: 500px;
+}
 
-        main {
-            width: 100%;
-            height: 500px;
-            background-color: white;
-        }
+p .tabcontent {
+  
+}
 
-        footer {
-            width: 100%;
-            height: 100px;
-        }
+/* Style each tab content individually */
+#Home {
+  background-color: black;
+}
 
-        footer .tabcontent {
-            width: 100%;
-            height: 100%;
-        }
+#Home > .body > img {
+  width: 400px;
+  height: auto;
+}
 
-        /* Style each tab content individually */
-        #Home {
-            background-color: black;
-        }
+#Athletics {
+  background-color: red;
+}
 
-        #Athletics {
-            background-color: red;
-        }
+#Athletics > .body > img {
+  width: 400px;
+  height: auto;
+}
 
-        #Videogames {
-            background-color: green;
-        }
+#Videogames {
+  background-color: green;
+}
+#Crafts {
+  background-color: blue;
+}
+#Code {
+  background-color: orange;
+}
 
-        #Crafts {
-            background-color: blue;
-        }
-
-        #Code {
-            background-color: orange;
-        }
     </style>
 </head>
 
@@ -117,40 +133,52 @@
             console.log(item);
         });
     </script>
+    <button class="tablink" onclick="openTab('Home', this, 'black')" id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openTab('Athletics', this, 'red')" id="defaultOpen">Athletics</button>
+    <button class="tablink" onclick="openTab('Videogames', this, 'green')">Videogames</button>
+    <button class="tablink" onclick="openTab('Crafts', this, 'blue')">Crafts</button>
+    <button class="tablink" onclick="openTab('Code', this, 'orange')">Code</button>
+    
     <div id="Home" class="tabcontent">
-        <h1>Home</h1>
-        <p>This is the home screen</p>
-        <button class="tablink" onclick="openTab('Home', this, 'black')" id="defaultOpen">Home</button>
-        <main></main>
-        <footer id="footer"></footer>
+      <h1>Home</h1>
+      <h2>This is the home screen</h2>
+      <main class="body">
+        <p>Hello! My name is Vikram. Welcome to my website. This is the home page. In this website, I have a series of tabs that show different aspects of my life, mainly throught the forms of hobbies. These include my athletic history, my interest in video games, my work with craftsmanship and masonry, as well as the code projects that I am working on such as this one.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Go-home.svg/1024px-Go-home.svg.png" </img>
+    
+      </main>
+      <footer id="footer"></footer>
     </div>
     <div id="Athletics" class="tabcontent">
-        <h1>Athletics</h1>
-        <p>Rugby, Basketball, Soccer, and Weightlifting</p>
-        <button class="tablink" onclick="openTab('Athletics', this, 'red')" id="defaultOpen">Athletics</button>
-        <main></main>
-        <footer id="footer"></footer>
+      <h1>Athletics</h1>
+      <h2>Rugby, Basketball, Soccer, and Weightlifting</h2>
+      <main class="body">
+        <p>A picture of the Rutgers Club Rugby Team at the end of the "Beast of the East" tournament in April, 2024.
+        </p>
+        <img src="/Users/vik/Downloads/IMG_2084.jpeg"></img>
+      </main>
+      <footer id="footer"></footer>
     </div>
     <div id="Videogames" class="tabcontent">
-        <h1>Videogames</h1>
-        <p>Videogames ranging from Fortnite to Minecraft with all kinds of smaller games in between</p>
-        <button class="tablink" onclick="openTab('Videogames', this, 'green')">Videogames</button>
-        <main></main>
-        <footer id="footer"></footer>
+      <h1>Videogames</h1>
+      <h2>Videogames ranging from Fortnite to Minecraft with all kinds of smaller games in between</h2>
+    
+      <main class="body"></main>
+      <footer id="footer"></footer>
     </div>
     <div id="Crafts" class="tabcontent">
-        <h1>Crafts</h1>
-        <p>Material crafts including woodworking and masonry</p>
-        <button class="tablink" onclick="openTab('Crafts', this, 'blue')">Crafts</button>
-        <main></main>
-        <footer id="footer"></footer>
+      <h1>Crafts</h1>
+      <h2>Material crafts including woodworking and masonry</h2>
+    
+      <main class="body"></main>
+      <footer id="footer"></footer>
     </div>
     <div id="Code" class="tabcontent">
-        <h1>Code<h1>
-                <p>Code projects spanning various languages and interfaces</p>
-                <button class="tablink" onclick="openTab('Code', this, 'orange')">Code</button>
-                <main></main>
-                <footer id="footer"></footer>
+      <h1>Code<h1>
+          <h2>Code projects spanning various languages and interfaces</h2>
+    
+          <main class="body"></main>
+          <footer id="footer"></footer>
     </div>
 </body>
 
