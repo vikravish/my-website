@@ -7,178 +7,151 @@
     <title>Document</title>
     <style>
         /* Style the tab buttons */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 20%;
-  font-family: "Monaco";
-}
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 20%;
+            font-family: "Monaco";
+        }
 
-/* Change background color of buttons on hover */
-.tablink:hover {
-  background-color: #777;
-}
-.body {
-  color: black;
-}
-/* Set default styles for tab content */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 50px;
-  text-align: center;
-  font-family: "Monaco";
-}
-main {
-  width: 100%;
-  height: 500px;
-  background-color: white;
-}
-footer {
-  width: 100%;
-  height: 100px;
-}
-footer .tabcontent {
-  width: 100%;
-  height: 100%;
-}
+        /* Change background color of buttons on hover */
+        .tablink:hover {
+            background-color: #777;
+        }
 
-p {
-  width: 500px;
-}
+        .body {
+            color: black;
+        }
 
-p .tabcontent {
-  
-}
+        /* Set default styles for tab content */
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+            font-family: "Monaco";
+        }
 
-/* Style each tab content individually */
-#Home {
-  background-color: black;
-}
+        main {
+            width: 100%;
+            height: 500px;
+            background-color: white;
+        }
 
-#Home > .body > img {
-  width: 400px;
-  height: auto;
-}
+        footer {
+            width: 100%;
+            height: 100px;
+        }
 
-#Athletics {
-  background-color: red;
-}
+        footer .tabcontent {
+            width: 100%;
+            height: 100%;
+        }
 
-#Athletics > .body > img {
-  width: 400px;
-  height: auto;
-}
+        p {
+            width: 500px;
+        }
 
-#Videogames {
-  background-color: green;
-}
-#Crafts {
-  background-color: blue;
-}
-#Code {
-  background-color: orange;
-}
+        p .tabcontent {}
 
+        /* Style each tab content individually */
+        #Home {
+            background-color: black;
+        }
+
+        #Home>.body>img {
+            width: 400px;
+            height: auto;
+        }
+
+        #Athletics {
+            background-color: red;
+        }
+
+        #Athletics>.body>img {
+            width: 400px;
+            height: auto;
+        }
+
+        #Videogames {
+            background-color: green;
+        }
+
+        #Crafts {
+            background-color: blue;
+        }
+
+        #Code {
+            background-color: orange;
+        }
     </style>
+    <script defer src="./main.js"></script>
 </head>
 
 <body>
-    <script>function openTab(tabName, elmnt, color) {
-            var bColor = color;
-            // Hide all elements with class="tabcontent" by default */
-            var i, tabcontent, tablinks;
-            /*tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }*/
-            let $tabcontents = document.getElementsByClassName("tabcontent");
-
-            [...$tabcontents].forEach(function ($item) {
-                $item.style.display = "none";
-            });
-
-            // Remove the background color of all tablinks/buttons
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-
-            // Show the specific tab content
-            document.getElementById(tabName).style.display = "block";
-
-            document.getElementById("footer").style.display = "block";
-
-            // Add the specific color to the button used to open the tab content
-            elmnt.style.backgroundColor = color;
-            document.getElementById("footer").style.backgroundColor = color;
-        }
-
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-
-        let groceryList = ["apples", "milk", "cheese", "meat"];
-
-        for (let i = 0; i < groceryList.length; i++) {
-            console.log(groceryList[i]);
-        }
-
-        groceryList.forEach(function (item) {
-            console.log(item);
-        });
-    </script>
     <button class="tablink" onclick="openTab('Home', this, 'black')" id="defaultOpen">Home</button>
-    <button class="tablink" onclick="openTab('Athletics', this, 'red')" id="defaultOpen">Athletics</button>
+    <button class="tablink" onclick="openTab('Athletics', this, 'red')">Athletics</button>
     <button class="tablink" onclick="openTab('Videogames', this, 'green')">Videogames</button>
     <button class="tablink" onclick="openTab('Crafts', this, 'blue')">Crafts</button>
     <button class="tablink" onclick="openTab('Code', this, 'orange')">Code</button>
-    
+
     <div id="Home" class="tabcontent">
-      <h1>Home</h1>
-      <h2>This is the home screen</h2>
-      <main class="body">
-        <p>Hello! My name is Vikram. Welcome to my website. This is the home page. In this website, I have a series of tabs that show different aspects of my life, mainly throught the forms of hobbies. These include my athletic history, my interest in video games, my work with craftsmanship and masonry, as well as the code projects that I am working on such as this one.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Go-home.svg/1024px-Go-home.svg.png" </img>
-    
-      </main>
-      <footer id="footer"></footer>
+        <h1>Home</h1>
+        <h2>This is the home screen</h2>
+        <main class="body">
+            <p>Hello! My name is Vikram. Welcome to my website. This is the home page. In this website, I have a series
+                of tabs that show different aspects of my life, mainly throught the forms of hobbies. These include my
+                athletic history, my interest in video games, my work with craftsmanship and masonry, as well as the
+                code projects that I am working on such as this one.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Go-home.svg/1024px-Go-home.svg.png"
+                </img>
+
+        </main>
+        <footer id="footer"></footer>
     </div>
     <div id="Athletics" class="tabcontent">
-      <h1>Athletics</h1>
-      <h2>Rugby, Basketball, Soccer, and Weightlifting</h2>
-      <main class="body">
-        <p>A picture of the Rutgers Club Rugby Team at the end of the "Beast of the East" tournament in April, 2024.
-        </p>
-        <img src="./IMG_2084.jpeg"></img>
-      </main>
-      <footer id="footer"></footer>
+        <h1>Athletics</h1>
+        <h2>Rugby, Basketball, Soccer, and Weightlifting</h2>
+        <main class="body">
+            <p>A picture of the Rutgers Club Rugby Team at the end of the "Beast of the East" tournament in April, 2024.
+            </p>
+            <img src="./IMG_2084.jpeg"></img>
+        </main>
+        <footer id="footer"></footer>
     </div>
     <div id="Videogames" class="tabcontent">
-      <h1>Videogames</h1>
-      <h2>Videogames ranging from Fortnite to Minecraft with all kinds of smaller games in between</h2>
-    
-      <main class="body"></main>
-      <footer id="footer"></footer>
+        <h1>Videogames</h1>
+        <h2>Videogames ranging from Fortnite to Minecraft with all kinds of smaller games in between</h2>
+
+        <main class="body"></main>
+        <footer id="footer"></footer>
     </div>
     <div id="Crafts" class="tabcontent">
-      <h1>Crafts</h1>
-      <h2>Material crafts including woodworking and masonry</h2>
-    
-      <main class="body"></main>
-      <footer id="footer"></footer>
+        <h1>Crafts</h1>
+        <h2>Material crafts including woodworking and masonry</h2>
+
+        <main class="body">
+            <p>Some of the my interests when it comes to making and building things revolve around woodwork and masonry.
+                I took woodshop in high school and frequntly find myself working on projects around my fraternity house,
+                whether it is building tables or making slight improvements on just the quality of living. My best
+                project as far as woodworking goes is a medicine cabinet-looking piece, however my mother gave it away
+                without consulting me. Currently I am working on creating a retaining wall at the end of my driveway in
+                order to prevent little rocks from falling into the driveway and popping the tires of my car.</p>
+        </main>
+        <footer id="footer"></footer>
     </div>
     <div id="Code" class="tabcontent">
-      <h1>Code<h1>
-          <h2>Code projects spanning various languages and interfaces</h2>
-    
-          <main class="body"></main>
-          <footer id="footer"></footer>
+        <h1>Code<h1>
+                <h2>Code projects spanning various languages and interfaces</h2>
+
+                <main class="body"></main>
+                <footer id="footer"></footer>
     </div>
 </body>
 
